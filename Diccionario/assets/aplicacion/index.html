@@ -1,0 +1,42 @@
+<DOCTYPE! html>
+    <html ng-app="diccionario">
+
+    <head>
+        <link rel="stylesheet" href="librerias/css/estilo.css">
+        <link rel="stylesheet" href="librerias/bootstrap-3.3.7-dist/css/bootstrap.css"> </head>
+
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#/">DiccWeb</a> </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/">Home</a></li>
+                        <li><a href="#/ayuda">Ayuda</a></li>
+                        <li><a href="#">Configuraciones</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div>
+            Hola mundo con angular : {{15 + 15}} </div>
+        <div class="container">
+            <div ui-view></div>
+        </div>
+        <!--        LIBRERIA ANGULAR   "ctrl+/"-->
+        
+        <script src="librerias/javascript/angular.min.js"></script>
+        <script src="librerias/javascript/angular-ui-router.js"></script>
+        <!--        APLICACION (EN NUESTRO CASO LA APLICACION SE LLAMA 'diccionario')-->
+        <script src="app.js"></script>
+        <!--       CONTROLOLADORES    -->
+        <script src="vistas/homeCtrl.js"></script>
+        <script src="vistas/ayudaCtrl.js"></script>
+        <script src="vistas/loginCtrl.js"></script>
+    </body>
+
+    </html>
