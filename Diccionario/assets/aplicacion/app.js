@@ -10,7 +10,7 @@ aplicacion.config(function ($stateProvider, $urlRouterProvider) {
         , templateUrl: "vistas/login.html"
         , controller: "loginCtrl"
     }).state('busqueda', {
-        url: "/busqueda"
+        url: "/busqueda/:idEntrada"
         , templateUrl: "vistas/busqueda.html"
         , controller: "busquedaCtrl"
     }).state('ayuda', {

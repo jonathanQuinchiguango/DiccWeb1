@@ -12,6 +12,9 @@ module.exports = {
         , contextoUtilizacion: {
             type: "integer"
         }
+        , definicion: {
+            type: "string"
+        }
         //Clave foranea
         
         , idEntradaEtiqueta: {

@@ -16,14 +16,12 @@ module.exports.bootstrap = function(cb) {
     
      var entradaDiccionario = {
        entrada: "Diccionario"
-       , pronunciacion: "diccionario"
         , inflexion: "ninguna"
         , palabraCompuesta: "ninguna"
         
     }
     var entradaCarro = {
         entrada: "Carro"
-        , pronunciacion: "diccionario"
         , inflexion: "ninguna"
         , palabraCompuesta: "ninguna"
     }

@@ -9,15 +9,15 @@ module.exports = {
         entrada: {
             type: "string"
         }
-        , pronunciacion: {
-            type: "string"
-        }
         , inflexion: {
             type: "string"
         }
         , palabraCompuesta: {
             type: "string"
         }
+        
+        //Clave primaria
+        
         , entradaEtiqueta: {
             collection: "entradaEtiqueta"
             , via: "idEntrada"
