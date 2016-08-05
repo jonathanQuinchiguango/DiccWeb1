@@ -7,8 +7,8 @@
 module.exports = {
     attributes: {
         //Claves foereanas
-        idUsuario: {
-            model: "usuario"
+        idEntrada: {
+            model: "entrada"
         }
         , idEtiqueta: {
             model: "etiqueta"

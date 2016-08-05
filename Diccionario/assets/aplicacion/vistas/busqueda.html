@@ -1,0 +1,14 @@
+<h1>Busqueda</h1>
+<h3>Lista de Usuarios</h3>
+<div class="row">
+    <!--   ng-repeat="SingularArreglo in ARREGLO"-->
+    <div class="col-sm-4 text-center" ng-repeat="entrada in entradas" ng-init="entrada.mostrar = true">
+        <div ng-show="entrada.mostrar">
+            <h2>{{entrada.entrada}} </h2>
+            <p>{{entrada.pronunciacion}}</p>
+            
+
+            
+        </div>
+    </div>
+</div>

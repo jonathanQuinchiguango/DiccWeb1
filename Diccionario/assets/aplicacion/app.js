@@ -9,6 +9,10 @@ aplicacion.config(function ($stateProvider, $urlRouterProvider) {
         url: "/login"
         , templateUrl: "vistas/login.html"
         , controller: "loginCtrl"
+    }).state('busqueda', {
+        url: "/busqueda"
+        , templateUrl: "vistas/busqueda.html"
+        , controller: "busquedaCtrl"
     }).state('ayuda', {
         url: "/ayuda"
         , templateUrl: "vistas/ayuda.html"

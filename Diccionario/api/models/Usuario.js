@@ -12,9 +12,6 @@ module.exports = {
         , password: {
             type: "string"
         }
-        , entradaEtiqueta: {
-            collection: "entradaEtiqueta"
-            , via: "idUsuario"
-        }
+        
     }
 };
