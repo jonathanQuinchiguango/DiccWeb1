@@ -9,6 +9,7 @@ aplicacion.controller("busquedaCtrl", function ($scope,$stateParams, $http) {
 
                 $scope.entrada = respuesta.data;
                 $scope.contextos = respuesta.data.contexto;
+                $scope.ejemplos= respuesta.data.ejemplo;
                             }
             , function (error) {
                 console.log(error);

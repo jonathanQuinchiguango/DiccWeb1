@@ -34,6 +34,9 @@ module.exports.bootstrap = function (cb) {
                     var contextoLocal1 = contextoMasculino;
                     contextoLocal1.idEntrada = entradaCreado.id;
                     crearContexto(contextoLocal1);
+                    var ejemplolocal= ejemploDicionario1; 
+                    ejemplolocal.idEntrada=entradaCreado.id; 
+                    crearEjemplo(ejemplolocal);
                 }
             });
         }
@@ -82,5 +85,31 @@ module.exports.bootstrap = function (cb) {
             console.log('No envio un contexto, ejecute la funcion con un contexto');
         }
     }
+    
+    
+    
+    //CREACION DE EJEMPLOS
+    var ejemploDicionario1 ={
+        ejemplo: "En el diccionario encuentro las palabras desconocidas."
+    }
+    //Funciones Crear ejemplo
+    function crearEjemplo(ejemplo) {
+        if (ejemplo) {
+            Ejemplo.create(ejemplo).exec(function respuestaServidor(errorServidor, ejemploCreado) {
+                if (errorServidor) {
+                    console.log('Hubo un error del servidor');
+                    console.log(errorServidor);
+                }
+                else {
+                    console.log('Se creo el ejemplo: ' + ejemploCreado.ejemplo);
+                }
+            });
+        }
+        else {
+            console.log('No envio un ejemplo, ejecute la funcion con un ejemplo');
+        }
+    }
+    
+    
     cb();
 };

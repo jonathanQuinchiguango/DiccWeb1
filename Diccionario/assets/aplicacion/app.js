@@ -13,7 +13,12 @@ aplicacion.config(function ($stateProvider, $urlRouterProvider) {
         url: "/busqueda/:idEntrada"
         , templateUrl: "vistas/busqueda.html"
         , controller: "busquedaCtrl"
-    }).state('ayuda', {
+    }).state('agregarEntrada', {
+        url: "/agregarEntrada"
+        , templateUrl: "vistas/agregarEntrada.html"
+        , controller: "agregarEntradaCtrl"
+    })
+        .state('ayuda', {
         url: "/ayuda"
         , templateUrl: "vistas/ayuda.html"
         , controller: "ayudaCtrl"

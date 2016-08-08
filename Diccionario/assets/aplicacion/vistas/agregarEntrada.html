@@ -1,0 +1,55 @@
+<h1>Entrada</h1>
+<h2>Crear Entrada</h2>
+<div class="row">
+    <div class="col-sm-6">
+        <form ng-submit="crearEntrada()" name="formulario">
+            <div class="form-group">
+                <label>Entrada : </label>
+                <input class="form-control" type="text" ng-model="nuevaEntrada.entrada" required> </div>
+            <div class="form-group">
+                <label>Inflexión : </label>
+                <input class="form-control" type="text" ng-model="nuevaEntrada.inflexion" required> </div>
+            <div class="form-group">
+                <label>Palabra Compuesta: </label>
+                <input class="form-control" type="text" ng-model="nuevaEntrada.palabraCompuesta" required> </div>
+            <br>
+            <button class="btn btn-block btn-success" ng-disabled="botonCrearDeshabilitado" type="submit">Crear Entrada</button>
+        </form>
+    </div>
+</div>
+<h2>Lista de Entradas</h2>
+<div class="row">
+    <div class="form-group">
+        <label>Filtrar Entrada: </label>
+        <input class="form-control" type="text" required ng-model="parametro"> </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4 text-center" ng-repeat="entrada in entradas | filter:parametro" ng-init="entrada.mostrar = true">
+            <div ng-show="entrada.mostrar">
+                <h3>{{entrada.entrada}}</h3>
+                <p>{{entrada.inflexion}}</p>
+                <p>{{entrada.palabraCompuesta}}</p> <a class="btn btn-block btn-warning" ng-click="entrada.mostrar = !entrada.mostrar">Editar Entrada</a> <a class="btn btn-block btn-danger" ng-click="eliminarEntrada(entrada)">Eliminar Entrada</a> <a class="btn btn-block btn-info" href="#/busqueda/{{entrada.id}}">Agregar o editar Contextos</a> <a class="btn btn-block btn-primary" href="#/busqueda/{{entrada.id}}">Agregar o editar Ejemplos</a>
+                <br>
+                <br> </div>
+            <!--EDITAR ENTRADA CON EL MISMO NG-SHOW-->
+            <div ng-hide="entrada.mostrar">
+                <form ng-submit="editarEntrada(entrada)">
+                    <div class="form-group">
+                        <br>
+                        <br>
+                        <label>Entrada : </label>
+                        <input class="form-control" type="text" ng-model="entrada.entrada" required> </div>
+                    <div class="form-group">
+                        <label>Inflexión : </label>
+                        <input class="form-control" type="text" ng-model="entrada.inflexion" required> </div>
+                    <div class="form-group">
+                        <label>Palabra Compuesta : </label>
+                        <input class="form-control" type="text" ng-model="entrada.palabraCompuesta" required> </div>
+                    <br>
+                    <button class="btn btn-block btn-info" ng-disabled="botonCrearDeshabilitado" type="submit">Actualizar</button>
+                </form>
+                <button class="btn btn-block" ng-disabled="botonCrearDeshabilitado" ng-click="entrada.mostrar = !entrada.mostrar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

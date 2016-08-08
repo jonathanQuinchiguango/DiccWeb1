@@ -7,11 +7,16 @@
 module.exports = {
     attributes: {
         correo: {
-            type: "string"
+            type: "email",
+            required: true, 
+            unique: true
         }
         , password: {
-            type: "string"
+            type: "string",
+            minLength: 6,
+            required: true
         }
         
     }
+    
 };
