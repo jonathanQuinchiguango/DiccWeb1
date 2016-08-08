@@ -7,24 +7,19 @@
 module.exports = {
     attributes: {
         utilizacion: {
+            type: "integer"
+        }
+        , etiquetaMorfologica: {
             type: "string"
         }
         , contextoUtilizacion: {
-            type: "integer"
+            type: "string"
         }
         , definicion: {
             type: "string"
-        }
-        //Clave foranea
-        
-        , idEntradaEtiqueta: {
-            model: "entradaEtiqueta"
-        }
-        //clave primaria
-        
-        , ejemplo: {
-            collection: "ejemplo"
-            , via: "idContexto"
+        }, //Claves foereanas
+        idEntrada: {
+            model: "entrada"
         }
     }
 };

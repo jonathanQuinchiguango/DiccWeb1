@@ -18,8 +18,14 @@ module.exports = {
         
         //Clave primaria
         
-        , entradaEtiqueta: {
-            collection: "entradaEtiqueta"
+        , contexto: {
+            collection: "contexto"
+            , via: "idEntrada"
+        }
+        //Clave primaria
+        
+        , ejemplo: {
+            collection: "ejemplo"
             , via: "idEntrada"
         }
     }

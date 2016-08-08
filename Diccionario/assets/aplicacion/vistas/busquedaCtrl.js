@@ -8,6 +8,7 @@ aplicacion.controller("busquedaCtrl", function ($scope,$stateParams, $http) {
             function (respuesta) {
 
                 $scope.entrada = respuesta.data;
+                $scope.contextos = respuesta.data.contexto;
                             }
             , function (error) {
                 console.log(error);
@@ -16,4 +17,6 @@ aplicacion.controller("busquedaCtrl", function ($scope,$stateParams, $http) {
     }
     
     $scope.cargarEntrada();
+    
+    
 });

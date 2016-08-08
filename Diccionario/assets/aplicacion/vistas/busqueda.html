@@ -3,10 +3,17 @@
     <div class="col-sm-6 text-left">
         <div>
             <h1>{{entrada.entrada}} </h1>
-            
             <p>Inlfexión: {{entrada.inflexion}}</p>
             <p>Palabra Compuesta: {{entrada.palabraCompuesta}}</p>
         </div>
-        <a class="btn btn-block btn-info" href="#/busqueda/{{entrada.id}}">Ejemplo</a>
+    </div>
+</div>
+<div class="row">
+    
+    <div class="col-sm-12 text-left" ng-repeat="contexto in contextos">
+        <h3>Definiciones</h3>
+        <p>{{contexto.utilizacion}} Etiqueta Morfologica: {{contexto.etiquetaMorfologica}}</p>
+        <p>Contexto: {{contexto.contextoUtilizacion}} </p>
+        <p>Definición: {{contexto.definicion}}</p>
     </div>
 </div>

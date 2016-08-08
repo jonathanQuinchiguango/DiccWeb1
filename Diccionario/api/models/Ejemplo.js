@@ -9,10 +9,10 @@ module.exports = {
         ejemplo: {
             type: "string"
         }
-        //Clave foranea        
-        
-        , idContexto: {
-            model: "contexto"
+        ,         
+        //Claves foereanas
+        idEntrada: {
+            model: "entrada"
         }
     }
 };
