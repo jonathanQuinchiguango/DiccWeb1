@@ -1,7 +1,8 @@
 aplicacion.controller("agregarContextoCtrl", function ($scope, $stateParams, $http) {
    
     //FUNCION PARA CREAR CONTEXTOS
-    
+     $scope.botonCrearDeshabilitado = false;
+
     $scope.crearContexto = function () {
 
         $scope.botonCrearDeshabilitado = true;

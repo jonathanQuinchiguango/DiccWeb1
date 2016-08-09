@@ -1,3 +1,13 @@
 #centrado {
     text-align: center;
 }
+#tituloEntrada{
+    font-size: 60px;
+}
+#atributosEntrada{
+    font-size: 20px;
+}
+#definiciones{
+    font-size: 15px;
+    text-align : justify;
+}

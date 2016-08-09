@@ -1,29 +1,35 @@
 <div class="row">
     <!--   ng-repeat="SingularArreglo in ARREGLO"-->
-    <div class="col-sm-6 text-left">
-        <div>
-            <h1>{{entrada.entrada}} </h1>
-            <p>Inlfexión: {{entrada.inflexion}}</p>
-            <p>Palabra Compuesta: {{entrada.palabraCompuesta}}</p>
+    <div class="col-sm-12 ">
+        <div class="text-left">
+            <h1 class="text-primary" id="tituloEntrada"><strong>{{entrada.entrada}}</strong> </h1>
+            
         </div>
+        <div class="text-right">
+            <audio class="text-left" ng-src="{{entrada.audio}}" preload="auto" controls autofocus></audio>
+            
+            </div>
+        <p class="text-info" id="atributosEntrada"><strong>Inflexión:</strong> {{entrada.inflexion}}</p>
+            <p class="text-info" id="atributosEntrada"><strong>Palabra Compuesta: </strong>{{entrada.palabraCompuesta}}</p>
+        
     </div>
 </div>
 
 
-<div class="row">
-    <h3>Definiciones</h3>
+<div class="row" id="definiciones">
+    <h2 class="text-success" ><strong>Definiciones</strong></h2>
     <div class="col-sm-12 text-left" ng-repeat="contexto in contextos">
         
-        <p>{{contexto.utilizacion}} Etiqueta Morfologica: {{contexto.etiquetaMorfologica}}</p>
-        <p>Contexto: {{contexto.contextoUtilizacion}} </p>
-        <p>Definición: {{contexto.definicion}}</p>
+        <p class="text-danger">{{contexto.utilizacion}} </p> <p class="text-success"><strong>Etiqueta Morfológica:</strong> {{contexto.etiquetaMorfologica}}</p>
+        <p class="text-success"><strong> Contexto: </strong>{{contexto.contextoUtilizacion}} </p>
+        <p class="text-success"><strong> Definición:</strong> {{contexto.definicion}}</p>
     </div>
 </div>
 
 <div class="row">
-    <h3>Ejemplos</h3>
+    <h2 class="text-warning"><strong>Ejemplos</strong></h2>
     <div class="col-sm-12 text-left" ng-repeat="ejemplo in ejemplos">
         
-        <p>  {{ejemplo.ejemplo}}</p>
+        <p class="text-warning">  {{ejemplo.ejemplo}}</p>
     </div>
 </div>

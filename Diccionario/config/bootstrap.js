@@ -38,8 +38,8 @@ module.exports.bootstrap = function (cb) {
             console.log('No envio un usuario, ejecute la funcion con un usuario');
         }
     }
-    crearEntrada(entradaDiccionario);
-    crearEntrada(entradaCarro);
+    //crearEntrada(entradaDiccionario);
+    //crearEntrada(entradaCarro);
     //INGRESO DE CONTEXTOS A LA BASE DE DATOS    
     var contextoMasculino = {
         utilizacion: 1

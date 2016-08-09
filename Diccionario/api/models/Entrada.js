@@ -15,7 +15,9 @@ module.exports = {
         , palabraCompuesta: {
             type: "string"
         }
-        
+        , audio: {
+            type: "string"
+        }
         //Clave primaria
         
         , contexto: {

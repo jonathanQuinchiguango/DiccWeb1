@@ -1,6 +1,6 @@
 aplicacion.controller("agregarEntradaCtrl",function($scope, $http){
     
-    
+    $scope.botonCrearDeshabilitado = false;
 
 //FUNCION PARA CREAR ENTRADAS
     $scope.crearEntrada = function () {
@@ -53,6 +53,7 @@ aplicacion.controller("agregarEntradaCtrl",function($scope, $http){
                 entrada: entrada.entrada
                 , inflexion: entrada.inflexion
                 , palabraCompuesta: entrada.palabraCompuesta
+                ,audio: entrada.audio
             }
         }).then(
             function (respuesta) {
@@ -93,10 +94,14 @@ aplicacion.controller("agregarEntradaCtrl",function($scope, $http){
             entrada: ""
             , inflexion: ""
             , palabraCompuesta: ""
+            , audio: ""
             
         }
     }
 
     
     
+    //FUNCIONES PARA SUBIR EL AUDIO
+   
+   
 });
