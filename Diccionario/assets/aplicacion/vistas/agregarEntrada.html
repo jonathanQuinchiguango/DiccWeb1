@@ -28,10 +28,10 @@
             <div ng-show="entrada.mostrar">
                 <h3>{{entrada.entrada}}</h3>
                 <p>{{entrada.inflexion}}</p>
-                <p>{{entrada.palabraCompuesta}}</p> <a class="btn btn-block btn-warning" ng-click="entrada.mostrar = !entrada.mostrar">Editar Entrada</a> <a class="btn btn-block btn-danger" ng-click="eliminarEntrada(entrada)">Eliminar Entrada</a> <a class="btn btn-block btn-info" href="#/busqueda/{{entrada.id}}">Agregar o editar Contextos</a> <a class="btn btn-block btn-primary" href="#/busqueda/{{entrada.id}}">Agregar o editar Ejemplos</a>
+                <p>{{entrada.palabraCompuesta}}</p> <a class="btn btn-block btn-warning" ng-click="entrada.mostrar = !entrada.mostrar">Editar Entrada</a> <a class="btn btn-block btn-danger" ng-click="eliminarEntrada(entrada)">Eliminar Entrada</a>  <a class="btn btn-block btn-primary" href="#/agregarContexto/{{entrada.id}}">Contextos y Ejemplos</a>
                 <br>
                 <br> </div>
-            <!--EDITAR ENTRADA CON EL MISMO NG-SHOW-->
+            <!--EDITAR ENTRADA CON EL MISMO NG-repeat-->
             <div ng-hide="entrada.mostrar">
                 <form ng-submit="editarEntrada(entrada)">
                     <div class="form-group">

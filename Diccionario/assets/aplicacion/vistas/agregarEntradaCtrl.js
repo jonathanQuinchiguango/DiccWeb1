@@ -6,7 +6,8 @@ aplicacion.controller("agregarEntradaCtrl",function($scope, $http){
     $scope.crearEntrada = function () {
 
         $scope.botonCrearDeshabilitado = true;
-
+        
+        
         $http({
             method: "POST"
             , url: "http://localhost:1337/Entrada"

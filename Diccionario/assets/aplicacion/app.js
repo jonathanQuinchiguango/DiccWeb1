@@ -18,6 +18,12 @@ aplicacion.config(function ($stateProvider, $urlRouterProvider) {
         , templateUrl: "vistas/agregarEntrada.html"
         , controller: "agregarEntradaCtrl"
     })
+        //Router pasando el ID
+        .state('agregarContexto', {
+        url: "/agregarContexto/:idEntrada"
+        , templateUrl: "vistas/agregarContexto.html"
+        , controller: "agregarContextoCtrl"
+    })
         .state('ayuda', {
         url: "/ayuda"
         , templateUrl: "vistas/ayuda.html"

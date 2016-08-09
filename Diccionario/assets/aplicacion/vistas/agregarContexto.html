@@ -1,0 +1,78 @@
+<!--Cargar el titulo de la entrada-->
+<div class="row">
+    <div class="col-sm-6 text-left">
+        <div>
+            <h1>{{entrada.entrada}} </h1>
+        </div>
+    </div>
+</div>
+<!--FORMULARIO PARA CONTEXTO-->
+<h2>Contextos</h2>
+<h3>Crear Contextos</h3>
+<div class="row">
+    <div class="col-sm-6">
+        <form ng-submit="crearContexto()">
+            <div class="form-group">
+                <label>Utilización : </label>
+                <input class="form-control" type="text" ng-model="nuevaContexto.utilizacion" required> </div>
+            <div class="form-group">
+                <label>Etiqueta Morfológica : </label>
+                <input class="form-control" type="text" ng-model="nuevaContexto.etiquetaMorfologica" required> </div>
+            <div class="form-group">
+                <label>Contexto : </label>
+                <input class="form-control" type="text" ng-model="nuevaContexto.contextoUtilizacion" required> </div>
+            <div class="form-group">
+                <label>Definición: </label>
+                <input class="form-control" type="text" ng-model="nuevaContexto.definicion" required> </div>
+            <br>
+            <button class="btn btn-block btn-success" ng-disabled="botonCrearDeshabilitado" type="submit">Crear Contexto</button>
+        </form>
+    </div>
+</div>
+<!--LISTAR LOS CONTEXTOS-->
+<h3>Lista Contexto</h3>
+<div class="row">
+     
+    <div class="col-sm-6 text-left" ng-repeat="contexto in contextos" ng-init="contexto.mostrar = true">
+        <div ng-show="contexto.mostrar">
+        <p>Utilización:{{contexto.utilizacion}}</p><p> Etiqueta Morfologica: {{contexto.etiquetaMorfologica}}</p>
+        <p>Contexto: {{contexto.contextoUtilizacion}} </p>
+        <p>Definición: {{contexto.definicion}}</p>
+        <a class="btn btn-block btn-warning" ng-click="contexto.mostrar = !contexto.mostrar">Editar Contexto</a> <a class="btn btn-block btn-danger" ng-click="eliminarContexto(contexto)">Eliminar Contexto</a> 
+        </div>
+        
+<!--Editar CONTEXTO DENTRO DEL NG-REPEAT-->
+            <div ng-hide="contexto.mostrar">
+                <form ng-submit="editarContexto(contexto)">
+                    <div class="form-group">
+                        <br>
+                        <br>
+                        <label>Utilización : </label>
+                        <input class="form-control" type="text" ng-model="contexto.utilizacion" required> </div>
+                    <div class="form-group">
+                        <label>Etiqueta Morfológica : </label>
+                        <input class="form-control" type="text" ng-model="contexto.etiquetaMorfologica" required> </div>
+                    <div class="form-group">
+                        <label>Contexto : </label>
+                        <input class="form-control" type="text" ng-model="contexto.contextoUtilizacion" required> </div>
+                     <div class="form-group">
+                        <label>Definición : </label>
+                        <input class="form-control" type="text" ng-model="contexto.definicion" required> </div>
+                    <br>
+                    <button class="btn btn-block btn-info" ng-disabled="botonCrearDeshabilitado" type="submit">Actualizar</button>
+                </form>
+                <button class="btn btn-block" ng-disabled="botonCrearDeshabilitado" ng-click="contexto.mostrar = !contexto.mostrar">Cancelar</button>
+            </div>
+        
+        
+    </div>
+    
+</div>
+
+<div class="row">
+    
+    <div class="col-sm-12 text-left" ng-repeat="ejemplo in ejemplos">
+        <h3>Ejemplos</h3>
+        <p>1  {{ejemplo.ejemplo}}</p>
+    </div>
+</div>
