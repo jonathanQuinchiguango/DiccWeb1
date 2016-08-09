@@ -31,12 +31,6 @@ module.exports.bootstrap = function (cb) {
                 }
                 else {
                     console.log('Se creo el entrada: ' + entradaCreado.entrada);
-                    var contextoLocal1 = contextoMasculino;
-                    contextoLocal1.idEntrada = entradaCreado.id;
-                    crearContexto(contextoLocal1);
-                    var ejemplolocal= ejemploDicionario1; 
-                    ejemplolocal.idEntrada=entradaCreado.id; 
-                    crearEjemplo(ejemplolocal);
                 }
             });
         }

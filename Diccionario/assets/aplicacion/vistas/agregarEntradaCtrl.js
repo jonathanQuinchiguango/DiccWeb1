@@ -1,6 +1,6 @@
 aplicacion.controller("agregarEntradaCtrl",function($scope, $http){
     
-    $scope.botonCrearDeshabilitado = false;
+    
 
 //FUNCION PARA CREAR ENTRADAS
     $scope.crearEntrada = function () {

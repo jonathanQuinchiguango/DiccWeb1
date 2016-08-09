@@ -1,6 +1,6 @@
 <!--Cargar el titulo de la entrada-->
 <div class="row">
-    <div class="col-sm-6 text-left">
+    <div class="col-sm-12 text-center">
         <div>
             <h1>{{entrada.entrada}} </h1>
         </div>
@@ -10,7 +10,7 @@
 <h2>Contextos</h2>
 <h3>Crear Contextos</h3>
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         <form ng-submit="crearContexto()">
             <div class="form-group">
                 <label>Utilización : </label>
@@ -70,9 +70,53 @@
 </div>
 
 <div class="row">
-    
-    <div class="col-sm-12 text-left" ng-repeat="ejemplo in ejemplos">
-        <h3>Ejemplos</h3>
-        <p>1  {{ejemplo.ejemplo}}</p>
+    <h3>Ejemplos</h3>
+    <!--FORMULARIO PARA EJEMPLOS-->
+
+<h3>Crear Ejemplos</h3>
+<div class="row">
+    <div class="col-sm-12">
+        <form ng-submit="crearEjemplo()">
+            <div class="form-group">
+                <label>Ejemplo : </label>
+                <input class="form-control" type="text" ng-model="nuevaEjemplo.ejemplo" required> </div>
+            
+            <br>
+            <button class="btn btn-block btn-success" ng-disabled="botonCrearDeshabilitado" type="submit">Crear Ejemplo</button>
+        </form>
     </div>
+</div>
+</div>
+
+<!--LISTAR LOS EJEMPLOS-->
+<h3>Lista Ejemplos</h3>
+<div class="row">
+     
+    <div class="col-sm-6 text-left" ng-repeat="ejemplo in ejemplos" ng-init="ejemplo.mostrar = true">
+        <div ng-show="ejemplo.mostrar">
+        <p>Ejemplo:{{ejemplo.ejemplo}}</p>        
+        <a class="btn btn-block btn-warning" ng-click="ejemplo.mostrar = !ejemplo.mostrar">Editar Contexto</a> <a class="btn btn-block btn-danger" ng-click="eliminarEjemplo(ejemplo)">Eliminar Contexto</a> 
+            <br>
+                <br>
+        </div>
+        
+<!--Editar EJEMPLO DENTRO DEL NG-REPEAT-->
+            <div ng-hide="ejemplo.mostrar">
+                <form ng-submit="editarEjemplo(ejemplo)">
+                    <div class="form-group">
+                        <br>
+                        <br>
+                        <label>Ejemplo : </label>
+                        <input class="form-control" type="text" ng-model="ejemplo.ejemplo" required> </div>
+                    <br>
+                    <button class="btn btn-block btn-info" ng-disabled="botonCrearDeshabilitado" type="submit">Actualizar</button>
+                </form>
+                <button class="btn btn-block" ng-disabled="botonCrearDeshabilitado" ng-click="ejemplo.ejemplo = !ejemplo.ejemplo">Cancelar</button>
+                <br>
+                <br>
+            </div>
+        
+        
+    </div>
+    
 </div>
