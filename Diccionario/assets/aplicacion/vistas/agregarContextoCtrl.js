@@ -149,8 +149,26 @@ aplicacion.controller("agregarContextoCtrl", function ($scope, $stateParams, $ht
             
         }
     }
+    //FUNCION EDITAR EJEMPLO
+    $scope.editarEjemplo = function (ejemplo) {
+        $http({
+            method: "PUT"
+            , url: "http://localhost:1337/Ejemplo/" + ejemplo.id
+            , data: {
+                ejemplo: ejemplo.ejemplo
+                
+            }
+        }).then(
+            function (respuesta) {
+                ejemplo.mostrar = !ejemplo.mostrar
+            }
+            , function (error) {
+                
+                console.log(error);
+            });
+    }
     
-    //FUNCION ELIMINAR CONTEXTO
+    //FUNCION ELIMINAR EJEMPLO
     $scope.eliminarEjemplo = function (ejemplo) {
 
         $http({

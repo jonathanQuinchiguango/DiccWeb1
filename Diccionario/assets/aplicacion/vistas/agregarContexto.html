@@ -1,16 +1,24 @@
 <!--Cargar el titulo de la entrada-->
+
+
 <div class="row">
     <div class="col-sm-12 text-center">
         <div>
-            <h1>{{entrada.entrada}} </h1>
+            <h1>Administración de los Contextos de {{entrada.entrada}} </h1>
         </div>
     </div>
 </div>
 <!--FORMULARIO PARA CONTEXTO-->
-<h2>Contextos</h2>
-<h3>Crear Contextos</h3>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Crear Contexto</div>
+    <div class="panel-body">
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+        
         <form ng-submit="crearContexto()">
             <div class="form-group">
                 <label>Utilización : </label>
@@ -28,12 +36,22 @@
             <button class="btn btn-block btn-success" ng-disabled="botonCrearDeshabilitado" type="submit">Crear Contexto</button>
         </form>
     </div>
+    <div class="col-sm-4">
+    </div>
+</div>
+    </div>
 </div>
 <!--LISTAR LOS CONTEXTOS-->
-<h3>Lista Contexto</h3>
+<br>
+<br>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Lista de Contextos</div>
+    <div class="panel-body">
+
 <div class="row">
      
-    <div class="col-sm-6 text-left" ng-repeat="contexto in contextos" ng-init="contexto.mostrar = true">
+    <div class="col-sm-4 text-left" ng-repeat="contexto in contextos" ng-init="contexto.mostrar = true">
         <div ng-show="contexto.mostrar">
         <p>Utilización:{{contexto.utilizacion}}</p><p> Etiqueta Morfologica: {{contexto.etiquetaMorfologica}}</p>
         <p>Contexto: {{contexto.contextoUtilizacion}} </p>
@@ -68,14 +86,31 @@
     </div>
     
 </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
 
 <div class="row">
-    <h3>Ejemplos</h3>
+    <div class="col-sm-12 text-center">
+        <div>
+            <h1>Administración de los Ejemplos de {{entrada.entrada}} </h1>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Crear Ejemplo</div>
+    <div class="panel-body">
+
+<div class="row">
     <!--FORMULARIO PARA EJEMPLOS-->
-
-<h3>Crear Ejemplos</h3>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
         <form ng-submit="crearEjemplo()">
             <div class="form-group">
                 <label>Ejemplo : </label>
@@ -85,17 +120,29 @@
             <button class="btn btn-block btn-success" ng-disabled="botonCrearDeshabilitado" type="submit">Crear Ejemplo</button>
         </form>
     </div>
+    <div class="col-sm-4">
+    </div>
 </div>
+</div>
+    </div>
 </div>
 
+<br>
+<br>
+
+
 <!--LISTAR LOS EJEMPLOS-->
-<h3>Lista Ejemplos</h3>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Lista de Ejemplos</div>
+    <div class="panel-body">
+
 <div class="row">
      
-    <div class="col-sm-6 text-left" ng-repeat="ejemplo in ejemplos" ng-init="ejemplo.mostrar = true">
+    <div class="col-sm-4 text-left" ng-repeat="ejemplo in ejemplos" ng-init="ejemplo.mostrar = true">
         <div ng-show="ejemplo.mostrar">
         <p>Ejemplo:{{ejemplo.ejemplo}}</p>        
-        <a class="btn btn-block btn-warning" ng-click="ejemplo.mostrar = !ejemplo.mostrar">Editar Contexto</a> <a class="btn btn-block btn-danger" ng-click="eliminarEjemplo(ejemplo)">Eliminar Contexto</a> 
+        <a class="btn btn-block btn-warning" ng-click="ejemplo.mostrar = !ejemplo.mostrar">Editar</a> <a class="btn btn-block btn-danger" ng-click="eliminarEjemplo(ejemplo)">Eliminar Contexto</a> 
             <br>
                 <br>
         </div>
@@ -119,4 +166,6 @@
         
     </div>
     
+</div>
+    </div>
 </div>
