@@ -2,17 +2,21 @@
     <div id="centrado">
         <div class="form-group"> <img src="imagenes/logo.png" alt="Imagen de un diccionario" class="img-thumbnail">
             <h1 class="text-success">Bienvenido</h1> </div>
-        <div class="form-group">
-            <label for="cuadroBusqueda">Ingrese una palabra:</label><input  id="cuadroBusqueda" class="form-control" type="text" required ng-model="parametro" autofocus> </div>
+        <div class="form-group" onload="document.getElementById('cuadroBusqueda').focus();">
+            <label for="cuadroBusqueda">Ingrese una palabra:</label>
+            <input id="cuadroBusqueda" class="form-control" type="text" required ng-model="parametro" autofocus> </div>
         <br>
         <div class="row">
             <div class="col-sm-4 text-center" ng-repeat="entrada in entradas | filter:parametro" ng-init="entrada.mostrar = true">
-                <div ng-show="entrada.mostrar">{{entrada.entrada}}
-                    <a class="btn btn-block btn-info" href="#/busqueda/{{entrada.id}}">Busqueda</a></div>
+                <div ng-show="entrada.mostrar" id="tituloEntrada">{{entrada.entrada}} <a class="btn btn-block btn-info" href="#/busqueda/{{entrada.id}}">Buscar</a></div>
             </div>
         </div>
+        <script>
+        
+        Mousetrap.bind('4', function() { console.log('4'); });
+          document.getElementById("cuadroBusqueda").focus();
+    </script>
+        
     </div>
-    <script> 
-        Mousetrap.bind('b', function() { highlight(3);  });
-        </script>
+    
 </div>

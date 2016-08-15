@@ -18,7 +18,7 @@ aplicacion.controller("agregarContextoCtrl", function ($scope, $stateParams, $ht
                 $scope.entradas.push(respuesta.data);
                 $scope.resetearNuevaContexto();
                 $scope.cargarEntrada();
-                $scope.botonCrearDeshabilitado = false;
+                $scope.botonCrearDeshabilitado = true;
 
                 console.log(respuesta);
             }
@@ -69,6 +69,7 @@ aplicacion.controller("agregarContextoCtrl", function ($scope, $stateParams, $ht
                 contexto.mostrar = !contexto.mostrar
             }
             , function (error) {
+                
                 console.log(error);
             });
     }
@@ -126,7 +127,7 @@ aplicacion.controller("agregarContextoCtrl", function ($scope, $stateParams, $ht
                 $scope.ejemplos.push(respuesta.data);
                 $scope.resetearNuevaEjemplo();
                 $scope.cargarEntrada();
-                $scope.botonCrearDeshabilitado = false;
+                $scope.botonCrearDeshabilitado = true;
 
                 console.log(respuesta);
             }
